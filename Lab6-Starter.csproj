@@ -52,6 +52,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<PackageReference Include="CommunityToolkit.Maui" Version="6.0.0" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
 		<PackageReference Include="Npgsql" Version="7.0.6" />
 		<PackageReference Include="Microsoft.Extensions.Configuration" Version="7.0.0" />
@@ -69,5 +70,15 @@
 	<ItemGroup>
 	  <BundleResource Include="Resources\Images\trash.png" />
 	  <BundleResource Include="Resources\Images\rectangle_list_48.png" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Compile Update="AddAirport_Popup.xaml.cs">
+	    <DependentUpon>AddAirport_Popup.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+	<ItemGroup>
+	  <MauiXaml Update="AddAirport_Popup.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	</ItemGroup>
 </Project>

@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 using Lab6_Starter.Model;
+using CommunityToolkit.Maui;
 
 namespace Lab6_Starter;
 
@@ -21,9 +22,10 @@ public static class MauiProgram
 
 #if DEBUG
 		builder.Logging.AddDebug();
+        builder.UseMauiCommunityToolkit();
 #endif
 
-		return builder.Build();
+        return builder.Build();
 	}
 }
 

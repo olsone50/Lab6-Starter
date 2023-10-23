@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<toolkit:Popup xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="Lab6_Starter.AddAirport_Popup">
+
+
+    <VerticalStackLayout>
+
+        <Grid RowDefinitions="*" ColumnDefinitions="2*, *">
+
+            <Label Grid.Column ="0" Text="Add New Airport" VerticalOptions="Center" HorizontalOptions="Center"/>
+            <Button Grid.Column ="1" ImageSource="icons8-x-50.png" VerticalOptions="Center" Clicked="OnExitButtonClicked"/>
+
+            <Label Grid.Column ="0" Text="Airport ID" VerticalOptions="Center" HorizontalOptions="Center"/>
+            <Entry Grid.Column ="0" x:Name="IdENT" Placeholder="E.G. MKE" WidthRequest="200"/>
+
+            <Label  Grid.Column ="0" Text="City" VerticalOptions="Center" HorizontalOptions="Center"/>
+            <Entry Grid.Column ="0" x:Name="CityENT" Placeholder="E.G. Milwaukee" WidthRequest="200"/>
+
+            <Label  Grid.Column ="0" Text="Date Visited" VerticalOptions="Center" HorizontalOptions="Center"/>
+            <Entry Grid.Column ="0" x:Name="DateVisitedENT" Placeholder="E.G. 10/10/2023" WidthRequest="200"/>
+
+            <Label Text="Rating" VerticalOptions="Center" HorizontalOptions="Center"/>
+            <Entry Grid.Column ="0" x:Name="RatingENT" Placeholder="E.G. 5" WidthRequest="200"/>
+
+            <Button Grid.Column="1" Text="Add Airport" TextColor="White" Clicked="OnAddAirport_Clicked"/>
+
+        </Grid>
+
+
+
+    </VerticalStackLayout>
+
+
+
+</toolkit:Popup>
