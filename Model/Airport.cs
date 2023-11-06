@@ -51,6 +51,8 @@ public class Airport : INotifyPropertyChanged
         Rating = rating;
     }
 
+    public Airport() { }
+
     public event PropertyChangedEventHandler PropertyChanged;
 
     protected virtual void OnPropertyChanged(string propertyName)
@@ -64,4 +66,8 @@ public class Airport : INotifyPropertyChanged
         return Id == otherAirport.Id;
     }
 
+    public override int GetHashCode()
+    {
+        throw new NotImplementedException();
+    }
 }

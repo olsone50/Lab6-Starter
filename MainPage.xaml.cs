@@ -1,5 +1,4 @@
-﻿using CommunityToolkit.Maui.Views;
-using Lab6_Starter.Model;
+﻿using Lab6_Starter.Model;
 using System.Threading.Channels;
 
 namespace Lab6_Starter;
@@ -14,15 +13,29 @@ public partial class MainPage : ContentPage
         // So any control on the page can bind to the BusinessLogic layer
         // There's really only one control that needs to talk to the BusinessLogic layer, and that's the CollectionView
 
-        BindingContext = MauiProgram.BusinessLogic;
+        //BindingContext = MauiProgram.BusinessLogic;
     }
 
     // Various event handlers for the buttons on the main page
 
+
     void AddAirport_Clicked(System.Object sender, System.EventArgs e)
     {
-        var popup = new AddAirport_Popup();
-        this.ShowPopup(popup);
+        // The UI layer talks to the BusinessLogic layer, telling it what to do
+        DateTime dateVisited;
+
+        if (DateTime.TryParse(DateVisitedENT.Text, out dateVisited) == false)
+        {
+            DisplayAlert("Ruhroh", "Illegal date format", "OK");
+        }
+        else
+        {
+            AirportAdditionError result = MauiProgram.BusinessLogic.AddAirport(IdENT.Text, CityENT.Text, DateTime.Parse(DateVisitedENT.Text), int.Parse(RatingENT.Text));
+            if (result != AirportAdditionError.NoError)
+            {
+                DisplayAlert("Ruhroh", result.ToString(), "OK");
+            }
+        }
     }
 
     void DeleteAirport_Clicked(System.Object sender, System.EventArgs e)
@@ -57,6 +70,7 @@ public partial class MainPage : ContentPage
     void CalculateStatistics_Clicked(System.Object sender, System.EventArgs e)
     {
         String result = MauiProgram.BusinessLogic.CalculateStatistics();
+
         DisplayAlert("Your Progress", result.ToString(), "Good to know");
     }
 }
