@@ -29,6 +29,6 @@ public partial class PlanningToolsPage : ContentPage
 
     public void OnRewardsButtonClicked(object sender, EventArgs e)
     {
-        Navigation.PushAsync(new());
+        Navigation.PushAsync(new RewardsPage());
     }
 }

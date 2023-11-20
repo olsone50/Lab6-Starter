@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Lab6_Starter.RewardsPage"
+             Title="Rewards">
+    <VerticalStackLayout
+        Padding="25, 20"
+        Spacing="20"
+    >
+            <Grid ColumnDefinitions=".60*, 1.9*" RowDefinitions="*, *, *, *, *, *">
+            
+
+            <Label Grid.Row="0" Grid.Column="0" Text="Name:" VerticalOptions="Center" FontSize="18" Margin="10,0,0,0" />
+            <Entry Grid.Row="0" Grid.Column="1" Placeholder="Enter your name" Grid.ColumnSpan="2" Margin="10,0,10,10" x:Name="nameENT"/>
+
+            <Label Grid.Row="1" Grid.Column="0" Text="Email:" VerticalOptions="Center" FontSize="18" Margin="10,0,0,0" />
+            <Entry Grid.Row="1" Grid.Column="1" Placeholder="Enter your email" Grid.ColumnSpan="2" Margin="10,0,10,10" x:Name="emailENT"/>
+
+            <Label Grid.Row="2" Grid.Column="0" Text="Address:" VerticalOptions="Center" FontSize="18" Margin="10,0,0,0" />
+            <Entry Grid.Row="2" Grid.Column="1" Placeholder="Enter your Address" Grid.ColumnSpan="2" Margin="10,0,10,10" x:Name="addressENT"/>
+
+            <Label Grid.Row="3" Grid.Column="0" Text="City:" VerticalOptions="Center" FontSize="18" Margin="10,0,0,0" />
+            <Entry Grid.Row="3" Grid.Column="1" Placeholder="Enter your city" Grid.ColumnSpan="2" Margin="10,0,10,10" x:Name="cityENT"/>
+
+            <Label Grid.Row="4" Grid.Column="0" Text="State:" VerticalOptions="Center" FontSize="18" Margin="10,0,0,0" />
+            <Entry Grid.Row="4" Grid.Column="1" Placeholder="Enter your state" Grid.ColumnSpan="2" Margin="10,0,10,10" x:Name="stateENT"/>
+
+            <Label Grid.Row="5" Grid.Column="0" Text="Zip:" VerticalOptions="Center" FontSize="18" Margin="10,0,0,0" />
+            <Entry Grid.Row="5" Grid.Column="1" Placeholder="Enter your zip" Grid.ColumnSpan="2" Margin="10,0,10,10" x:Name="zipENT"/>
+        </Grid>
+
+        <Grid RowDefinitions="*, *" ColumnDefinitions="*, *, *" HorizontalOptions="Center" ColumnSpacing="50" >
+            <RadioButton Grid.Row="0" Grid.Column="0" IsEnabled="False" IsChecked="True" GroupName="0"/>
+            <RadioButton Grid.Row="0" Grid.Column="1" IsEnabled="False" IsChecked="True" GroupName="1"/>
+            <RadioButton Grid.Row="0" Grid.Column="2" IsEnabled="False" IsChecked="False" GroupName="2"/>
+
+            <Label Grid.Row="1" Grid.Column="0" Text="Bronze"/>
+            <Label Grid.Row="1" Grid.Column="1" Text="Silver"/>
+            <Label Grid.Row="1" Grid.Column="2" Text="Gold"/>
+        </Grid>
+
+        <Button Text="Submit"  Clicked="OnSubmitButtonClicked" IsEnabled="True" />
+    </VerticalStackLayout>
+</ContentPage>
